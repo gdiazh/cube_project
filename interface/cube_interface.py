@@ -49,8 +49,13 @@ class CubeInterface:
 
     def process_command(self, msg):
         print "msg to send:"+msg.data
-        if (msg.data == "end") : self.running = False
-        self.client_socket_.send(msg.data)
+        if (msg.data == "end") :
+            self.running = False
+            return
+        else if (msg.data == "stop"): self.client_socket_.send("s")
+        else if (msg.data == "jump"): self.client_socket_.send("j")
+        else if (msg.data == "balance"): self.client_socket_.send("b")
+        else: rospy.logwarn("Unknown command")
 
     def valid_data(self, data):
         return True
