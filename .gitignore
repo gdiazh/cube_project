@@ -1,0 +1,9 @@
+*~
+*.pyc
+*.autosave
+*.mat
+*.fig
+*.png
+*.mexa64
+*.txt
+slprj/
